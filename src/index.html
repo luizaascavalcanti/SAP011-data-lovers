@@ -1,12 +1,120 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script src="main.js" type="module"></script>
-  </body>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="main.js" type="module"></script>
+  <script src="https://kit.fontawesome.com/b0f29e9bfe.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <!-- Previous Button -->
+  <button id="prev-btn">
+    <i class="fas fa-arrow-circle-left"></i>
+  </button>
+
+
+  <!-- Book -->
+  <div id="book" class="book">
+    <!-- Paper 1 -->
+    <div id="p1" class="paper">
+      <div class="front">
+        <div id="f1" class="front-content">
+          <h1>Livro de aventuras do</h1>
+          <h2>Rick and Morty</h2>
+          <img src='https://www.icegif.com/wp-content/uploads/2022/06/icegif-514.gif'>
+        </div>
+      </div>
+      <section class="back">
+        <section id="b1" class="back-content">
+          <h2> Ricky and Morty </h2>
+          <form id="search-form">
+            <label for="filter-select">Filtrar por:</label>
+            <select id="filter-select">
+              //Filters: name, specie, gender, origin, from, episodes
+            <option value="name">Nome</option>
+            <option value="specie">Especie</option>
+            <option value="gender">Genero</option>
+            <option value="origin">Origem</option>
+            <option value="From">Onde vive</option>
+            <option value="episodes">Episodios</option>
+             </select>
+            <section class="search-container">
+             <input type="text" id="search-input" placeholder="Digite sua busca...">
+    <button id="search-button">Buscar</button>
+  </section>
+</form>
+              <button id="btn-p2" class="page-btn page2-btn"> Início </button>
+              <button id="btn-cards" class="page-btn page2-btn"> Cards </button>
+              <a href="#b3" id="linkAbout">About</a>
+              <a href="https://play.hbomax.com/page/urn:hbo:page:GXkRjxwjR68PDwwEAABKJ:type:series?source=googleHBOMAX&action=open" id=link target="_blank"> Assistir Série</a>
+              </article>
+        </section>
+      </section>
+    </div>
+    <!-- Paper 2 -->
+    <div id="p2" class="paper">
+      <div class="front">
+        <div id="f2" class="front-content">
+          <h1>Front 2</h1>
+            <section id="cardscontainer" >
+              <button id="next"> Proximo </button>
+              <img src="https://raw.githubusercontent.com/Laboratoria/rick-and-morty-images/master/images/1.jpeg">
+              <img src="https://raw.githubusercontent.com/Laboratoria/rick-and-morty-images/master/images/2.jpeg">
+              <img src="https://raw.githubusercontent.com/Laboratoria/rick-and-morty-images/master/images/3.jpeg">
+              <button id="before"> Voltar </button>
+            </section>
+        </div>
+      </div>
+      <div class="back">
+        <div id="b2" class="back-content">
+          <h2> Rick and Morty </h2>
+          <button> Inicio </button>
+          <button> Sobre </button>
+          <button> Cards </button>
+        </div>
+      </div>
+    </div>
+    <!-- Paper 3 -->
+    <div id="p3" class="paper">
+      <div class="front">
+        <div id="f3" class="front-content">
+          <h1>Front 3</h1>
+        </div>
+      </div>
+      <div class="back">
+        <div id="b3" class="back-content">
+          <h2> Rick and Morty </h2>
+          <h1> About</h1>
+          <p1>Criada por Justin Roiland e Dan Harmon, Rick & Morty é uma série animada de comédia que mostra as aventuras interdimensionais de Rick, a mente mais brilhante da galáxia, e seu neto Morty.
+Com sua arma capaz de criar portais para viajar no tempo-espaço, Rick leva Morty para explorar todos as absurdas formas de vida que o universo é capaz de sustentar. 
+Apesar de genial, Rick tem sofre de alcoolismo e possui uma relação conflituosa com sua família, fruto da sua visão cínica da vida e seu egoísmo. Por outro lado, Morty está longe de ter o intelecto do seu avô, mas é o único capaz de fazê-lo ser um pouquinho mais gentil.
+Entre momentos hilários e reflexões interessantes sobre a vida, Rick & Morty arranca gargalhadas e ainda rende ótimas discussões filosóficas.
+</p1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Next Button -->
+  <button id="next-btn">
+    <i class="fas fa-arrow-circle-right"></i>
+  </button>
+  
+<img src="https://www.teahub.io/photos/full/161-1616106_rick-and-morty-style.jpg" alt="Img" class="backgroundImg">
+  <script src="script.js"></script>
+
+  <!--
+  This script places a badge on your repl's full-browser view back to your repl's cover
+  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
+  teal, blue, blurple, magenta, pink!
+  -->
+  <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script>
+</body>
+
 </html>

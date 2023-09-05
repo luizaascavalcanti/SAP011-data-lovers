@@ -1,0 +1,215 @@
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+  body {
+    margin: 0;
+    overflow: hidden;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    background-color: black;
+}  
+
+.backgroundImg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+.img {
+  background-size: cover;
+  z-index: -1
+  
+}
+
+/* Book */
+.book {
+    position: relative;
+    width: 580px;
+    height: 580px;
+    transition: transform 0.5s;
+    border-radius: 20px;
+    font-family: ricky;
+}
+
+#search-form {
+  display: flex;
+  align-items: center;
+}
+
+#filter-select {
+  margin-right: 10px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+#search-input {
+  margin-right: 10px;
+  padding: 5px;
+}
+
+label[for="filter-select"] {
+   font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
+   color: #41b0c5;
+  -webkit-text-stroke: 0.5px #Bedd41;
+}
+#search-button {
+  font-size: 25px;
+   color: #41b0c5;
+  -webkit-text-stroke: 0.5px #Bedd41;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+#link{
+    font-size: 30px;
+    color: #41b0c5;
+    -webkit-text-stroke: 0.1px #Bedd41;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    text-decoration: none;
+  
+}
+  h1 {
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #41b0c5;
+    -webkit-text-stroke: 0.5px #Bedd41;
+    margin-bottom: 5px;
+  }
+
+  h2 {
+    font-size: 60px;
+    color: #41b0c5;
+    -webkit-text-stroke: 0.1px #Bedd41;
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+p1 {
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    padding: 28px;  
+}
+
+.paper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    perspective: 1500px;
+    border-radius: 10px
+
+}
+
+.front,
+.back {
+    background-color: black;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transition: transform 0.5s;
+    border-radius: 30px
+}
+
+.front {
+    z-index: 1;
+    backface-visibility: hidden;
+    border-left: 3px solid grey;
+    border-radius: 10px
+}
+
+.back {
+    z-index: 0;
+}
+
+.front-content,
+.back-content {
+    width: 100%;
+    height: auto; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: center;
+    padding-top: 20px; 
+}
+
+.front-content img {
+    max-width: 85%;
+    max-height: 85%;
+}
+
+.back-content {
+    transform: rotateY(180deg)
+}
+
+/* Paper flip effect */
+.flipped .front,
+.flipped .back {
+    transform: rotateY(-180deg);
+}
+
+/* Controller Buttons */
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 20px;
+    transition: transform 0.5s;
+    font-family: ricky;
+    padding: 90px;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:hover i {
+    color: #66CDAA;
+}
+
+i {
+    font-size: 50px;
+    color: #008080;
+}
+
+/* Paper stack order */
+#p1 {
+    z-index: 3;
+
+}
+
+#p2 {
+    z-index: 2;
+}
+
+#p3 {
+    z-index: 1;
+}
+@font-face {
+    font-family: ricky;
+    src: url(get_schwifty.ttf);
+}
+
+.page2-btn {
+    font-size: 30px;
+    color: #41b0c5;
+    -webkit-text-stroke: 0.1px #Bedd41;
+    padding: 0.5px;
