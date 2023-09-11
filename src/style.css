@@ -213,3 +213,34 @@ i {
     color: #41b0c5;
     -webkit-text-stroke: 0.1px #Bedd41;
     padding: 0.5px;}
+
+#cardsDetails {
+  color: white;
+}
+
+#cardscontainer {
+  max-height: 480px; /* Ajuste conforme necessário */
+  overflow-y: auto;
+  flex-wrap: wrap;
+  display: flex;
+  flex: 1;
+  margin: 5px;
+  min-width: calc(33.33% - 10px);
+}
+
+.personagem {
+  color:white;
+  display: flex;
+
+}
+
+.flex-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  flex: 1;
+  margin: 5px;
+  min-width: calc(33.33% - 10px);
+}

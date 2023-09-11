@@ -20,11 +20,76 @@ let currentLocation = 1;
 let numOfPapers = 3;
 let maxLocation = numOfPapers + 1;
 
-//Cards Container
-const cardscontainer = document.querySelector("#cardscontainer");
-cardscontainer.innerHTML = `<img src= "${data.results[0].image}">`;
-  const image= [];
- console.log(image);
+  //cards details
+//  data.results.map(personagem => {
+ //   cardsDetails.innerHTML += `<p>${personagem.name}</p>`;
+ // });
+
+
+//  data.results.map(personagem => {
+ //   cardsDetails.innerHTML += `<p>${personagem.status}</p>`;
+// });
+
+ // data.results.map(personagem => {
+//    cardsDetails.innerHTML += `<p>${personagem.species}</p>`;
+ // });
+
+
+//data.results.map(personagem => {
+  //  cardsDetails.innerHTML += `<p>${personagem.type}</p>`;
+ // });
+
+
+//  data.results.map(personagem => {
+ //   cardsDetails.innerHTML += `<p>${personagem.gender}</p>`;
+ // });
+  
+ // data.results.map(personagem => {
+  //  cardsDetails.innerHTML += `<p>${personagem.origin}</p>`;
+ // });
+
+ // data.results.map(personagem => {
+  //  cardsDetails.innerHTML += `<p>${personagem.location}</p>`;
+ // });
+  
+
+  //infinit scrowling
+//  const cardscontainer = document.getElementById('cardscontainer');
+
+  //Cards Container (joga isso pra dentro e uma função e joga o data.results pra uma let)
+  data.results.map(personagem => {
+     cardscontainer.innerHTML += `
+      <section class="personagem">
+         <img src="${personagem.image}">
+         <p>${personagem.name}</p>
+      </section>`;
+  });
+  
+
+  // female.map............
+
+//  data.results.map(personagem => {
+ //   cardsDetails.innerHTML += `<p>${personagem.name}</p>`;
+ // });
+
+  
+  //function loadMoreItems() {
+ //     for (let i = 1; i <= 9; i++) {
+ //         const item = document.createElement('section');
+  //        item.classList.add('item');
+  //        item.textContent = 'Item ' + i;
+/// cardscontainer.appendChild(item);
+  //    }
+ // }
+  
+ // cardscontainer.addEventListener('scroll', function() {
+  //    if (cardscontainer.scrollTop + cardscontainer.clientHeight >= cardscontainer.scrollHeight) {
+  //        loadMoreItems();
+  //    }
+ // });
+  
+  // Inicializa com alguns itens
+ // loadMoreItems();
 
 
 function goToPagethree(isAtBeginning) {
