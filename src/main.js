@@ -1,10 +1,12 @@
-import{nameFilter, specieFilter, genderFilter, originFilter, locationFilter, episodeFilter} from './data.js';
+import{statusFilter} from './data.js';
 import data from './rickandmorty.js';
 // References to DOM Elements
 const prevBtn = document.querySelector("#prev-btn");
 const nextBtn = document.querySelector("#next-btn");
 const book = document.querySelector("#book");
 const linkAbout = document.querySelector("#linkAbout");
+const filterSelect = document.querySelector("#filter-select")
+const filterButton = document.querySelector("#filter-button");
 
 const paper1 = document.querySelector("#p1");
 const paper2 = document.querySelector("#p2");
@@ -61,12 +63,16 @@ let maxLocation = numOfPapers + 1;
      cardscontainer.innerHTML += `
       <section class="personagem">
          <img src="${personagem.image}">
-         <p>${personagem.name}</p>
+         <p>Nome: ${personagem.name}</p>
+         <p>Satus: ${personagem.status}</p>
+         <p>Espécie: ${personagem.species}</p>
+         <p>Tipo: ${personagem.type}</p>
+         <p>Gênero: ${personagem.gender}</p>
       </section>`;
   });
   
 
-  // female.map............
+ // female.map............
 
 //  data.results.map(personagem => {
  //   cardsDetails.innerHTML += `<p>${personagem.name}</p>`;
@@ -91,6 +97,44 @@ let maxLocation = numOfPapers + 1;
   // Inicializa com alguns itens
  // loadMoreItems();
 
+ //Função de filtrar por status
+
+ filterSelect.addEventListener("click", () => {
+    const selectedOption = filterSelect.value;
+    if (selectedOption === "Status") {
+        const filteredData = statusFilter(data.results, "alive"); // Filtra os dados por status "alive"
+        displayFilteredData(filteredData); // Função para exibir os dados filtrados na tela
+    }
+});
+
+function displayFilteredData(filteredData) {
+    const cardscontainer = document.getElementById('cardscontainer');
+    cardscontainer.innerHTML = ''; // Limpa o conteúdo anterior
+
+    filteredData.forEach(personagem => {
+        cardscontainer.innerHTML += `
+            <section class="personagem">
+                <img src="${personagem.image}">
+                <p>Nome: ${personagem.name}</p>
+                <p>Status: ${personagem.status}</p>
+                <p>Espécie: ${personagem.species}</p>
+                <p>Tipo: ${personagem.type}</p>
+                <p>Gênero: ${personagem.gender}</p>
+            </section>`;
+    });
+}
+
+
+filterButton.addEventListener("click", () => {
+    const selectedOption = filterSelect.value;
+    if (selectedOption === "Status") {
+        const filteredData = statusFilter(data.results, "alive"); // Filtra os dados por status "alive"
+        displayFilteredData(filteredData); // Função para exibir os dados filtrados na tela
+    }
+});
+
+
+/// até essa parte foi onde eu mexi
 
 function goToPagethree(isAtBeginning) {
     paper3.classList.add("flipped");
