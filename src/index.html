@@ -33,32 +33,29 @@
       <section class="back">
         <section id="b1" class="back-content">
           <h2> Ricky and Morty </h2>
-          <form id="search-form">
-            <label for="filter-select">Filtrar por:</label>
-            <select id="filter-select">
-            <option value="Status">Status</option>
-            <option value="AZ">A-Z</option>
-            <button id="filterButton">Filtrar</button>
-            <!--
-              
-              Adicionaremos mais filtros?
-              
-              <option value="gender">Genero</option>
-            <option value="origin">Origem</option>
-            <option value="From">Onde vive</option>
-            <option value="episodes">Episodios</option> 
-            -->
-             </select>
-            <section class="search-container">
-             <input type="text" id="search-input" placeholder="Digite sua busca...">
-    <button id="search-button">Buscar</button>
-  </section>
-</form>
-              <button id="btn-p2" class="page-btn page2-btn"> Início </button>
-              <button id="btn-cards" class="page-btn page2-btn"> Cards </button>
-              <a href="#b3" id="linkAbout">About</a>
-              <a href="https://play.hbomax.com/page/urn:hbo:page:GXkRjxwjR68PDwwEAABKJ:type:series?source=googleHBOMAX&action=open" id=link target="_blank"> Assistir Série</a>
-              </article>
+          <!-- <button id="btn-p2" class="page-btn page2-btn"> Início </button>
+          <a href="#b3" id="linkAbout">About</a>
+          <a href="https://play.hbomax.com/page/urn:hbo:page:GXkRjxwjR68PDwwEAABKJ:type:series?source=googleHBOMAX&action=open" id=link target="_blank"> Assistir Série</a>
+          </article> -->
+            <div class="filter-container">
+            <label for="filter-gender-select">Gênero: </label>
+            <select id="filter-gender-select">
+              <option value="All"> Todos </option>
+              <option value="Male"> Masculino </option>
+              <option value="Female"> Feminino </option>
+            </select>
+            <label for="filter-status-select">Status: </label>
+            <select id="filter-status-select">
+              <option value="All"> Todos </option>
+              <option value="Alive"> Vivo </option>
+              <option value="Dead"> Morto </option>
+              <option value="unknown"> Indefinido </option>
+            </select>
+              <label for="search-input">Nome: </label>
+              <input type="text" id="search-input" placeholder="Nome...">
+
+            <button id="search-button">Buscar</button>
+          </div>
         </section>
       </section>
     </div>
@@ -66,27 +63,9 @@
     <div id="p2" class="paper">
       <div class="front">
         <div id="f2" class="front-content">
-          <h1>Front 2</h1>
+          <h1>Personagens</h1>
             <section id="cardscontainer" class="flex-container">
             </section>
-        </div>
-      </div>
-      <div class="back">
-        <div id="b2" class="back-content">
-          <h2> Rick and Morty </h2>
-          <button> Inicio </button>
-          <button> Sobre </button>
-          <button> Cards </button>
-        </div>
-      </div>
-    </div>
-    <!-- Paper 3 -->
-    <div id="p3" class="paper">
-      <div class="front">
-        <div id="f3" class="front-content">
-          <h1>Front 3</h1>
-          <section id="cardsDetails" class="flex-details">
-          </section>
         </div>
       </div>
       <div class="back">
@@ -94,10 +73,10 @@
           <h2> Rick and Morty </h2>
           <h1> About</h1>
           <p1>Criada por Justin Roiland e Dan Harmon, Rick & Morty é uma série animada de comédia que mostra as aventuras interdimensionais de Rick, a mente mais brilhante da galáxia, e seu neto Morty.
-Com sua arma capaz de criar portais para viajar no tempo-espaço, Rick leva Morty para explorar todos as absurdas formas de vida que o universo é capaz de sustentar. 
-Apesar de genial, Rick tem sofre de alcoolismo e possui uma relação conflituosa com sua família, fruto da sua visão cínica da vida e seu egoísmo. Por outro lado, Morty está longe de ter o intelecto do seu avô, mas é o único capaz de fazê-lo ser um pouquinho mais gentil.
-Entre momentos hilários e reflexões interessantes sobre a vida, Rick & Morty arranca gargalhadas e ainda rende ótimas discussões filosóficas.
-</p1>
+          Com sua arma capaz de criar portais para viajar no tempo-espaço, Rick leva Morty para explorar todos as absurdas formas de vida que o universo é capaz de sustentar. 
+          Apesar de genial, Rick tem sofre de alcoolismo e possui uma relação conflituosa com sua família, fruto da sua visão cínica da vida e seu egoísmo. Por outro lado, Morty está longe de ter o intelecto do seu avô, mas é o único capaz de fazê-lo ser um pouquinho mais gentil.
+          Entre momentos hilários e reflexões interessantes sobre a vida, Rick & Morty arranca gargalhadas e ainda rende ótimas discussões filosóficas.
+          </p1>
         </div>
       </div>
     </div>

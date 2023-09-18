@@ -1,12 +1,14 @@
-import{statusFilter} from './data.js';
+import {generalFilter} from './data.js';
 import data from './rickandmorty.js';
 // References to DOM Elements
 const prevBtn = document.querySelector("#prev-btn");
 const nextBtn = document.querySelector("#next-btn");
 const book = document.querySelector("#book");
 const linkAbout = document.querySelector("#linkAbout");
-const filterSelect = document.querySelector("#filter-select")
-const filterButton = document.querySelector("#filter-button");
+const filterGenderSelect = document.querySelector("#filter-gender-select")
+const filterStatusSelect = document.querySelector("#filter-status-select")
+const searchInput = document.querySelector("#search-input");
+const searchButton = document.querySelector("#search-button");
 
 const paper1 = document.querySelector("#p1");
 const paper2 = document.querySelector("#p2");
@@ -15,99 +17,31 @@ const paper3 = document.querySelector("#p3");
 // Event Listener
 prevBtn.addEventListener("click", goPrevPage);
 nextBtn.addEventListener("click", goNextPage);
-linkAbout.addEventListener("click", goToPagethree);
+// linkAbout.addEventListener("click", goToPagethree);
 
 // Business Logic
 let currentLocation = 1;
 let numOfPapers = 3;
 let maxLocation = numOfPapers + 1;
+let filteredData;
+let selectedGender = 'All';
+let selectedStatus = 'All';
+let selectedName = '';
 
-  //cards details
-//  data.results.map(personagem => {
- //   cardsDetails.innerHTML += `<p>${personagem.name}</p>`;
- // });
-
-
-//  data.results.map(personagem => {
- //   cardsDetails.innerHTML += `<p>${personagem.status}</p>`;
-// });
-
- // data.results.map(personagem => {
-//    cardsDetails.innerHTML += `<p>${personagem.species}</p>`;
- // });
-
-
-//data.results.map(personagem => {
-  //  cardsDetails.innerHTML += `<p>${personagem.type}</p>`;
- // });
-
-
-//  data.results.map(personagem => {
- //   cardsDetails.innerHTML += `<p>${personagem.gender}</p>`;
- // });
-  
- // data.results.map(personagem => {
-  //  cardsDetails.innerHTML += `<p>${personagem.origin}</p>`;
- // });
-
- // data.results.map(personagem => {
-  //  cardsDetails.innerHTML += `<p>${personagem.location}</p>`;
- // });
-  
-
-  //infinit scrowling
-//  const cardscontainer = document.getElementById('cardscontainer');
-
-  //Cards Container (joga isso pra dentro e uma função e joga o data.results pra uma let)
+  //Cards Container
   data.results.map(personagem => {
      cardscontainer.innerHTML += `
       <section class="personagem">
          <img src="${personagem.image}">
          <p>Nome: ${personagem.name}</p>
-         <p>Satus: ${personagem.status}</p>
+         <p>Status: ${personagem.status}</p>
          <p>Espécie: ${personagem.species}</p>
          <p>Tipo: ${personagem.type}</p>
          <p>Gênero: ${personagem.gender}</p>
       </section>`;
   });
-  
 
- // female.map............
-
-//  data.results.map(personagem => {
- //   cardsDetails.innerHTML += `<p>${personagem.name}</p>`;
- // });
-
-  
-  //function loadMoreItems() {
- //     for (let i = 1; i <= 9; i++) {
- //         const item = document.createElement('section');
-  //        item.classList.add('item');
-  //        item.textContent = 'Item ' + i;
-/// cardscontainer.appendChild(item);
-  //    }
- // }
-  
- // cardscontainer.addEventListener('scroll', function() {
-  //    if (cardscontainer.scrollTop + cardscontainer.clientHeight >= cardscontainer.scrollHeight) {
-  //        loadMoreItems();
-  //    }
- // });
-  
-  // Inicializa com alguns itens
- // loadMoreItems();
-
- //Função de filtrar por status
-
- filterSelect.addEventListener("click", () => {
-    const selectedOption = filterSelect.value;
-    if (selectedOption === "Status") {
-        const filteredData = statusFilter(data.results, "alive"); // Filtra os dados por status "alive"
-        displayFilteredData(filteredData); // Função para exibir os dados filtrados na tela
-    }
-});
-
-function displayFilteredData(filteredData) {
+  function displayFilteredData(filteredData) {
     const cardscontainer = document.getElementById('cardscontainer');
     cardscontainer.innerHTML = ''; // Limpa o conteúdo anterior
 
@@ -124,13 +58,48 @@ function displayFilteredData(filteredData) {
     });
 }
 
+ //Função de filtrar por genero
 
-filterButton.addEventListener("click", () => {
-    const selectedOption = filterSelect.value;
-    if (selectedOption === "Status") {
-        const filteredData = statusFilter(data.results, "alive"); // Filtra os dados por status "alive"
-        displayFilteredData(filteredData); // Função para exibir os dados filtrados na tela
+ filterGenderSelect.addEventListener("change", () => {
+    const selectedOption = filterGenderSelect.value;
+    switch (selectedOption) {
+        case "Male":
+            selectedGender = 'Male';
+            break;
+        case "Female":
+            selectedGender = 'Female';
+            break;
+        default:
+            selectedGender = 'All';
     }
+});
+
+//Função de filtrar por status
+filterStatusSelect.addEventListener("change", () => {
+    const selectedOption = filterStatusSelect.value;
+    switch (selectedOption) {
+        case "Alive":
+            selectedStatus = "Alive"
+            break;
+        case "Dead":
+            selectedStatus = "Dead"
+            break;
+            case "unknown":
+                selectedStatus = "unknown"
+            break;
+        default:
+            selectedStatus = "All"
+    }
+});
+
+//Função de filtrar por nome
+searchInput.addEventListener("input", (event) => {
+    selectedName = event.target.value;
+});
+
+searchButton.addEventListener("click", () => {
+    filteredData = generalFilter(data.results, selectedStatus, selectedGender, selectedName);
+    displayFilteredData(filteredData);
 });
 
 

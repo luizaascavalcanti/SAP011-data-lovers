@@ -46,8 +46,18 @@
   align-items: center;
 }
 
-#filter-select {
+#filter-gender-select {
   margin-right: 10px;
+}
+
+#filter-status-select {
+  margin-right: 10px;
+}
+
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .search-container {
@@ -60,11 +70,23 @@
   padding: 5px;
 }
 
-label[for="filter-select"] {
+label[for="filter-gender-select"] {
    font-family: 'Times New Roman', Times, serif;
   font-size: 15px;
    color: #41b0c5;
   -webkit-text-stroke: 0.5px #Bedd41;
+}
+label[for="filter-status-select"] {
+  font-family: 'Times New Roman', Times, serif;
+ font-size: 15px;
+  color: #41b0c5;
+ -webkit-text-stroke: 0.5px #Bedd41;
+}
+label[for="search-input"] {
+  font-family: 'Times New Roman', Times, serif;
+ font-size: 15px;
+  color: #41b0c5;
+ -webkit-text-stroke: 0.5px #Bedd41;
 }
 #search-button {
   font-size: 25px;
@@ -243,4 +265,9 @@ i {
   flex: 1;
   margin: 5px;
   min-width: calc(33.33% - 10px);
+}
+p{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: large;
+  color: aliceblue;
 }
