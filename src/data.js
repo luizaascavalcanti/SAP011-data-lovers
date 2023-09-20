@@ -6,7 +6,7 @@ export const generalFilter = (data, filterStatus, filterGender, filterName) => {
   return data;
 };
 
-const nameFilter = (data, filter) => {
+export const nameFilter = (data, filter) => {
   if (filter === "") {
     return data;
   } else {
@@ -14,19 +14,18 @@ const nameFilter = (data, filter) => {
   }
 };
 
- const genderFilter = (data, filter) => {
-    if (filter === "All") {
-      return data;
-    } else {
-      return data.filter((character) => character.gender === filter);
-    }
-  };
+export const genderFilter = (data, filter) => {
+  if (filter === "All") {
+    return data;
+  } else {
+    return data.filter((character) => character.gender === filter);
+  }
+};
 
-  const statusFilter = (data, filter) => {
-    if (filter === "All") {
-      return data;
-    } else {
-      return data.filter((character) => character.status === filter);
-    }
-  };
- 
+export const statusFilter = (data, filter) => {
+  if (filter === "All") {
+    return data;
+  } else {
+    return data.filter((character) => character.status === filter);
+  }
+};
