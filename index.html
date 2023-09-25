@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="main.js" type="module"></script>
+  <script src="https://kit.fontawesome.com/b0f29e9bfe.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <!-- Previous Button -->
+  <button id="prev-btn">
+    <i class="fas fa-arrow-circle-left"></i>
+  </button>
+
+
+  <!-- Book -->
+  <div id="book" class="book">
+    <!-- Paper 1 -->
+    <div id="p1" class="paper">
+      <div class="front">
+        <div id="f1" class="front-content">
+          <h1>Livro de aventuras do</h1>
+          <h2>Rick and Morty</h2>
+          <img src="https://www.icegif.com/wp-content/uploads/2022/06/icegif-514.gif">
+        </div>
+      </div>
+      <section class="back">
+        <section id="b1" class="back-content">
+          <h2> Ricky and Morty </h2>
+          <!-- <button id="btn-p2" class="page-btn page2-btn"> Início </button>
+          <a href="#b3" id="linkAbout">About</a>
+          <a href="https://play.hbomax.com/page/urn:hbo:page:GXkRjxwjR68PDwwEAABKJ:type:series?source=googleHBOMAX&action=open" id=link target="_blank"> Assistir Série</a>
+          </article> -->
+            <div class="filter-container">
+            <label for="filter-gender-select">Gênero: </label>
+            <select id="filter-gender-select">
+              <option value="All"> Todos </option>
+              <option value="Male"> Masculino </option>
+              <option value="Female"> Feminino </option>
+            </select>
+            <label for="filter-status-select">Status: </label>
+            <select id="filter-status-select">
+              <option value="All"> Todos </option>
+              <option value="Alive"> Vivo </option>
+              <option value="Dead"> Morto </option>
+              <option value="unknown"> Indefinido </option>
+            </select>
+              <label for="search-input">Nome: </label>
+              <input type="text" id="search-input" placeholder="Nome...">
+
+            <button id="search-button">Buscar</button>
+          </div>
+        </section>
+      </section>
+    </div>
+    <!-- Paper 2 -->
+    <div id="p2" class="paper">
+      <div class="front">
+        <div id="f2" class="front-content">
+          <h1>Personagens</h1>
+            <section id="cardscontainer" class="flex-container">
+            </section>
+        </div>
+      </div>
+      <div class="back">
+        <div id="b3" class="back-content">
+          <h2> Rick and Morty </h2>
+          <h1> About</h1>
+          <p1> Criada por Justin Roiland e Dan Harmon, Rick e Morty é uma série animada de comédia que mostra as aventuras interdimensionais de Rick, a mente mais brilhante da galáxia, e seu neto Morty.
+          Com sua arma capaz de criar portais para viajar no tempo-espaço, Rick leva Morty para explorar todos as absurdas formas de vida que o universo é capaz de sustentar. 
+          Apesar de genial, Rick tem sofre de alcoolismo e possui uma relação conflituosa com sua família, fruto da sua visão cínica da vida e seu egoísmo. Por outro lado, Morty está longe de ter o intelecto do seu avô, mas é o único capaz de fazê-lo ser um pouquinho mais gentil.
+          Entre momentos hilários e reflexões interessantes sobre a vida, Rick e Morty arranca gargalhadas e ainda rende ótimas discussões filosóficas.
+          </p1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Next Button -->
+  <button id="next-btn">
+    <i class="fas fa-arrow-circle-right"></i>
+  </button>
+  
+<img src="https://www.teahub.io/photos/full/161-1616106_rick-and-morty-style.jpg" alt="Img" class="backgroundImg">
+</body>
+
+</html>
